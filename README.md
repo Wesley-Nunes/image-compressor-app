@@ -32,10 +32,10 @@ I developed this application to apply the principles I've learned while studying
 
 Follow these steps to compress an image:
 
-Click the "Upload Image" button (supports jpg, png, gif, WebP; maximum file size: 10MB).
-Click on "Compress Image."
-Wait for the compression process to complete.
-Choose the location to save the compressed image.
+1. Click on the **"Upload Image"** button.
+2. Select the image you want to compress (supports jpg, png, gif, WebP; maximum file size: 10MB).
+3. _Wait for the compression process to complete._
+4. Choose the location to save the compressed image.
 
 ## <a name="project-structure"></a>Project Structure
 
@@ -44,34 +44,11 @@ Choose the location to save the compressed image.
     index.html       # Main entry point for the application
     styles/          # CSS files for styling
     media/           # Images, icons, videos
-    client/          # Client-side code (JavaScript, etc.)
-    server/          # Server-side code (PHP, other server-side languages)
+    client/          # Client-side code (JavaScript)
+    server/          # Server-side code (PHP)
+        temp/        # Temporally server folders and files
     template/        # HTML/PHP views
-    tests/           # Tests (if applicable)
 ```
-
-- index.html:
-
-  - The index.html file serves as the main entry point for the web application.
-
-- styles/ :
-
-  - The styles/ directory contains cascading style sheets (CSS) responsible for styling the application.
-
-- media/ :
-
-  - The media/ directory houses various media assets, including images, icons, and videos.
-
-- client/ :
-
-  - The client/ directory houses front-end code logic and utility functions.
-
-- server/ :
-
-  - The server/ directory houses back-end code logic and utility functions.
-
-- template/ :
-  - The template/ directory stores HTML and PHP views.
 
 ## <a name="#lighthouse-report"></a>Lighthouse Report
 
