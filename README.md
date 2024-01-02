@@ -41,7 +41,7 @@ Follow these steps to compress an image:
 
 ```
 /project-root
-    index.html       # Main entry point for the application
+    index.php       # Main entry point for the application
     styles/          # CSS files for styling
     media/           # Images, icons, videos
     client/          # Client-side code (JavaScript)
@@ -56,7 +56,7 @@ Follow these steps to compress an image:
 
 ## <a name="preview"></a>Preview
 
-The project is available on [Image Compressor](http://image-compressor.rf.gd/)
+The project is available on [Image Compressor](https://image-compressor.rf.gd/?i=1)
 
 ## <a name="attributions"></a>Attributions
 

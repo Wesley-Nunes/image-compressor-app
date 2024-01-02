@@ -9,18 +9,18 @@ define('COMPRESS_DIR', './temp/image-compressed/');
 define('MAX_ALLOWED_SIZE_MB', 10);
 
 try {
-    if (!isset($_FILES['image'])) {
+    if (!isset($_FILES['upload-image'])) {
         $errorMessage = 'No image file selected for upload';
         throw new Exception($errorMessage);
     }
-    if (!$_FILES['image']['size']) {
+    if (!$_FILES['upload-image']['size']) {
         $errorMessage = 'The upload file has no data';
         throw new Exception($errorMessage);
     }
 
-    $uploadImagePath = UPLOAD_DIR . basename($_FILES['image']['name']);
+    $uploadImagePath = UPLOAD_DIR . basename($_FILES['upload-image']['name']);
     $compressImagePath = COMPRESS_DIR . basename($uploadImagePath);
-    $moveUploadImageFail = !move_uploaded_file($_FILES['image']['tmp_name'], $uploadImagePath);
+    $moveUploadImageFail = !move_uploaded_file($_FILES['upload-image']['tmp_name'], $uploadImagePath);
 
     if ($moveUploadImageFail) {
         $errorMessage = 'An error occur when trying to upload';
@@ -30,13 +30,13 @@ try {
         $errorMessage = 'The upload file is not a valid image';
         throw new Exception($errorMessage);
     }
-    $fileSizeInMB = floatval($_FILES['image']['size'] / (1024 * 1024));
+    $fileSizeInMB = floatval($_FILES['upload-image']['size'] / (1024 * 1024));
     if ($fileSizeInMB > MAX_ALLOWED_SIZE_MB) {
         $errorMessage = 'The file you attempted to upload exceeds the maximum allowed size of 10MB';
         throw new Exception($errorMessage);
     }
     $allowedFormats = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
-    if (!in_array($_FILES['image']['type'], $allowedFormats)) {
+    if (!in_array($_FILES['upload-image']['type'], $allowedFormats)) {
         $errorMessage = "Unsupported file format \nAccepted formats: JPG, PNG, GIF, or WebP";
         throw new Exception($errorMessage);
     }
