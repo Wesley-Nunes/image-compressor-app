@@ -1,16 +1,17 @@
 <?php
+session_start(); ?>
+<?php
 include 'compress-image.php';
 include 'download-image.php';
 include 'delete-image.php';
-// include 'error-message.php';
 
 define('UPLOAD_DIR', './temp/image-upload/');
 define('COMPRESS_DIR', './temp/image-compressed/');
-define('MAX_ALLOWED_SIZE_MB', 10);
+define('MAX_ALLOWED_SIZE_MB', 10 * 1024 * 1024);
 
 try {
     if (!isset($_FILES['upload-image'])) {
-        $errorMessage = 'No image file selected for upload';
+        $errorMessage = 'No image file was selected for upload';
         throw new Exception($errorMessage);
     }
     if (!$_FILES['upload-image']['size']) {
@@ -23,29 +24,30 @@ try {
     $moveUploadImageFail = !move_uploaded_file($_FILES['upload-image']['tmp_name'], $uploadImagePath);
 
     if ($moveUploadImageFail) {
-        $errorMessage = 'An error occur when trying to upload';
+        $errorMessage = 'An error occurs when trying to upload';
         throw new Exception($errorMessage);
     }
     if (!exif_imagetype($uploadImagePath)) {
         $errorMessage = 'The upload file is not a valid image';
         throw new Exception($errorMessage);
     }
-    $fileSizeInMB = floatval($_FILES['upload-image']['size'] / (1024 * 1024));
-    if ($fileSizeInMB > MAX_ALLOWED_SIZE_MB) {
-        $errorMessage = 'The file you attempted to upload exceeds the maximum allowed size of 10MB';
+    if (intval($_FILES['upload-image']['size']) > MAX_ALLOWED_SIZE_MB) {
+        $errorMessage = 'File size exceeds 10 MB limit';
         throw new Exception($errorMessage);
     }
     $allowedFormats = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
     if (!in_array($_FILES['upload-image']['type'], $allowedFormats)) {
-        $errorMessage = "Unsupported file format \nAccepted formats: JPG, PNG, GIF, or WebP";
+        $errorMessage = "Unsupported format: JPG, PNG, GIF, or WebP accepted";
         throw new Exception($errorMessage);
     }
     compressImage($uploadImagePath, $compressImagePath);
     downloadImage($compressImagePath);
 } catch (Exception $e) {
-    // erroMessageTemplate($e->getMessage());
+    setcookie('errorMessage', $e->getMessage(), time() + 3600, '/');
+    header("Location: /index.php");
 } catch (Throwable $t) {
-    // erroMessageTemplate("Unexpected error occurred: " . $t->getMessage());
+    setcookie('errorMessage', 'An unexpected error occurred: ' . $e->getMessage(), time() + 3600, '/');
+    header("Location: /index.php");
 } finally {
     deleteImage($uploadImagePath);
     deleteImage($compressImagePath);

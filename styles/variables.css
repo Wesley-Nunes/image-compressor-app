@@ -3,6 +3,11 @@
   --primary-color-font: #fff;
   --secondary-color-font: #181d19;
   --secondary-color-font-variant: #414942;
+  --surface: #fef7ff;
   --surface-low: #f0f5ee;
+  --outline-variant: #cac4d0;
+  --surface-disable: rgba(128, 128, 128, 0.5);
   --image-bg: #9effb7;
+  --error-font: #ba1a1a;
+  --error-bg: #fff;  
 }

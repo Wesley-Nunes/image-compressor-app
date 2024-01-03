@@ -7,17 +7,24 @@
       <p>Maximum file size: 10MB</p>
     </div>
     <form
-      action="server/index.php"
+      action="server/upload-image.php"
       method="post"
       enctype="multipart/form-data"
       class="action"
+      id="uploadForm"
     >
+      <div class="loading-container">
+        <div class="loading-spinner"></div>
+      </div>
       <label
         for="upload-image"
         class="upload-image-btn"
         role="button"
         aria-haspopup="dialog"
         aria-controls="upload-dialog"
+        tabindex="1"
+        autofocus
+        data-test-id="upload-image"
       >
         <img src="./media/plus-icon.svg" alt="" class="plus-icon" />
         Upload Image
@@ -27,7 +34,7 @@
           type="file"
           accept="image/png, image/jpeg, image/jpg, image/webp, image/gif"
           required
-          aria-hidden="true"
+          aria-hidden="true"          
         />
       </label>
     </form>
