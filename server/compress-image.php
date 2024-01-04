@@ -1,22 +1,23 @@
 <?php
 function compressImage($originalImagePath, $compressedImagePath)
 {
-    $originalImage = null;
+    $img = null;
     $mimeType = image_type_to_mime_type(exif_imagetype($originalImagePath));
 
     if ($mimeType == 'image/jpeg') {
-        $originalImage = imagecreatefromjpeg($originalImagePath);
-        imagejpeg($originalImage, $compressedImagePath, 80);
+        $img = imagecreatefromjpeg($originalImagePath);
+        imagejpeg($img, $compressedImagePath, 80);
     } elseif ($mimeType == 'image/png') {
-        $originalImage = imagecreatefrompng($originalImagePath);
-        imagepng($originalImage, $compressedImagePath, 9);
+        $img = imagecreatefrompng($originalImagePath);
+        imageAlphaBlending($img, true);
+        imageSaveAlpha($img, true);
+        imagepng($img, $compressedImagePath, 8);
     } elseif ($mimeType == 'image/webp') {
-        $originalImage = imagecreatefromwebp($originalImagePath);
-        imagewebp($originalImage, $compressedImagePath, 80);
+        $img = imagecreatefromwebp($originalImagePath);
+        imageSaveAlpha($img, true);
+        imagewebp($img, $compressedImagePath, 80);
     }
 
-
-
-    imagedestroy($originalImage);
+    imagedestroy($img);
 }
 ?>
