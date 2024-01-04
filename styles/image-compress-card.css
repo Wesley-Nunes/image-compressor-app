@@ -24,10 +24,19 @@ input[type="file"] {
   background-color: var(--surface-disable);
   pointer-events: none;
 }
-.media {
-  border-radius: 1.2rem 1.2rem 0 0;
+.media-container {
+  width: 100%;
 
   background-color: var(--image-bg);
+
+  border-radius: 1.2rem 1.2rem 0 0;
+}
+.media {
+  display: block;
+
+  border-radius: 1.2rem 1.2rem 0 0;
+
+  margin: auto;
 }
 .text-content {
   display: flex;
@@ -105,7 +114,10 @@ input[type="file"] {
   border-radius: 100px;
 }
 .upload-image-btn:focus {
-  outline: 2px solid var(--image-bg);
+  outline: 1px solid var(--image-bg);
+}
+.upload-image-btn:hover {
+  filter: opacity(0.9);
 }
 .plus-icon {
   width: 1.8rem;
@@ -118,6 +130,9 @@ input[type="file"] {
     max-width: 64rem;
 
     display: flex;
+  }
+  .media-container {
+    border-radius: 1.2rem 0 0 1.2rem;
   }
   .media {
     width: 40vh;
