@@ -7,8 +7,7 @@ const validateFile = (file) => {
     "image/png",
     "image/jpeg",
     "image/jpg",
-    "image/webp",
-    "image/gif",
+    "image/webp"
   ];
 
   if (file.size > maxSize) {
@@ -17,7 +16,7 @@ const validateFile = (file) => {
   }
 
   if (!allowedTypes.includes(file.type)) {
-    setErrorMessage("Unsupported format: JPG, PNG, GIF, or WebP accepted");
+    setErrorMessage("Unsupported format: JPG, PNG, or WebP accepted");
     return false;
   }
 
