@@ -1,0 +1,43 @@
+<div class="content">
+    <div class="media-container">
+        <img width="300px" height="340px" src="./media/octopus.svg" alt="" class="media" />
+    </div>
+  <main class="text-content">
+    <h2 class="headline">Compress image</h2>
+    <div class="support-text">
+      <p>Supports jpg, png, gif, and WebP</p>
+      <p>Maximum file size: 10MB</p>
+    </div>
+    <form
+      action="server/upload-image.php"
+      method="post"
+      enctype="multipart/form-data"
+      class="action"
+      id="uploadForm"
+    >
+      <div class="loading-container">
+        <div class="loading-spinner"></div>
+      </div>
+      <label
+        for="upload-image"
+        class="upload-image-btn"
+        role="button"
+        aria-haspopup="dialog"
+        aria-controls="upload-dialog"
+        tabindex="1"
+        data-test-id="upload-image"
+      >
+        <img src="./media/plus-icon.svg" alt="" class="plus-icon" />
+        Upload Image
+        <input
+          name="upload-image"
+          id="upload-image"
+          type="file"
+          accept="image/png, image/jpeg, image/jpg, image/webp, image/gif"
+          required
+          aria-hidden="true"          
+        />
+      </label>
+    </form>
+  </main>
+</div>
