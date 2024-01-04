@@ -35,11 +35,11 @@ try {
         $errorMessage = 'File size exceeds 10 MB limit';
         throw new Exception($errorMessage);
     }
-    $allowedFormats = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp'];
+    $allowedFormats = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
     if (!in_array($_FILES['upload-image']['type'], $allowedFormats)) {
-        $errorMessage = "Unsupported format: JPG, PNG, GIF, or WebP accepted";
+        $errorMessage = "Unsupported format: JPG, PNG, or WebP accepted";
         throw new Exception($errorMessage);
-    }
+    }    
     compressImage($uploadImagePath, $compressImagePath);
     downloadImage($compressImagePath);
 } catch (Exception $e) {

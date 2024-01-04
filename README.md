@@ -33,7 +33,7 @@ I developed this application to apply the principles I've learned while studying
 Follow these steps to compress an image:
 
 1. Click on the **"Upload Image"** button.
-2. Select the image you want to compress (supports jpg, png, gif, WebP; maximum file size: 10MB).
+2. Select the image you want to compress (supports jpg, png, WebP; maximum file size: 10MB).
 3. _Wait for the compression process to complete._
 4. Choose the location to save the compressed image.
 
