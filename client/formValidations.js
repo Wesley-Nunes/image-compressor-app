@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         uploadImageInput.value = "";
       }
     } else {
-      setErrorMessage("An unexpected error occurred. Refresh the app");
+      setErrorMessage("An unexpected error occurred");
       Manager.setErrorState();
     }
   });
