@@ -41,13 +41,22 @@ Follow these steps to compress an image:
 
 ```
 /project-root
-    index.php       # Main entry point for the application
-    styles/          # CSS files for styling
-    media/           # Images, icons, videos
-    client/          # Client-side code (JavaScript)
-    server/          # Server-side code (PHP)
-        temp/        # Temporally server folders and files
-    template/        # HTML/PHP views
+    index.php            # Main entry point for the application
+    src/
+        styles/          # CSS files for styling
+        media/           # Images, icons, videos
+        client/          # Client-side code (JavaScript)
+        server/          # Server-side code (PHP)
+            temp/        # Temporally server folders and files
+        template/        # HTML/PHP views
+```
+
+### Useful commands:
+
+```
+npm i                   # install the packages
+npm run build           # build the project on folder htdocs
+npm run server          # starts the PHP built-in in server
 ```
 
 ## <a name="#lighthouse-report"></a>Lighthouse Report
@@ -62,7 +71,8 @@ The project is available on [Image Compressor](https://image-compressor.rf.gd/?i
 
 All media used in this app are free for usage, and the sources are credited below:
 
-- [Image by catalyststuff]("https://www.freepik.com/free-vector/cute-octopus-courier-holding-package-box-cartoon-vector-icon-illustration-animal-business-icon-concept-isolated-premium-vector-flat-cartoon-style_20340771.htm#page=2&query=cartoon%20octopus&position=20&from_view=search&track=ais&uuid=72e3dcf6-b9b6-4a30-888c-f3533a87547f") on Freepik
+- [octopus]("https://www.freepik.com/free-vector/cute-octopus-courier-holding-package-box-cartoon-vector-icon-illustration-animal-business-icon-concept-isolated-premium-vector-flat-cartoon-style_20340771.htm#page=2&query=cartoon%20octopus&position=20&from_view=search&track=ais&uuid=72e3dcf6-b9b6-4a30-888c-f3533a87547f") Image by catalyststuff on Freepik;
+- [fav icon]("https://www.freepik.com/free-vector/sticker-design-with-empty-box-closed-isolated_18184239.htm#query=package&position=4&from_view=search&track=sph&uuid=f4570466-bcf0-4125-a932-3cf513adbe11) Image by brgfx on Freepik.
 
 ## <a name="license"></a>License
 

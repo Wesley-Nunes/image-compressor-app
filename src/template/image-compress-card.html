@@ -1,9 +1,15 @@
 <div class="content">
-    <div class="media-container">
-        <img width="300px" height="340px" src="./media/octopus.svg" alt="" class="media" />
-    </div>
+  <div class="media-container">
+    <img
+      width="300px"
+      height="340px"
+      src="./media/octopus.svg"
+      alt=""
+      class="media"
+    />
+  </div>
   <main class="text-content">
-    <h2 class="headline">Compress image</h2>
+    <h1 class="headline">Compress image</h1>
     <div class="support-text">
       <p>Supports jpg, png, and WebP</p>
       <p>Maximum file size: 10MB</p>
@@ -19,23 +25,26 @@
         <div class="loading-spinner"></div>
       </div>
       <label
-        for="upload-image"
+        for="upload-image-input"
         class="upload-image-btn"
-        role="button"
-        aria-haspopup="dialog"
-        aria-controls="upload-dialog"
-        tabindex="1"
+        tabindex="0"
         data-test-id="upload-image"
       >
-        <img src="./media/plus-icon.svg" alt="" class="plus-icon" />
+        <img
+          src="./media/plus-icon.svg"
+          alt=""
+          width="18px"
+          height="18px"
+          class="plus-icon"
+        />
         Upload Image
         <input
           name="upload-image"
-          id="upload-image"
+          id="upload-image-input"
           type="file"
           accept="image/png, image/jpeg, image/jpg, image/webp"
           required
-          aria-hidden="true"          
+          aria-hidden="true"
         />
       </label>
     </form>
