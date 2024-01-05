@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "server": "php -S 0.0.0.0:8000 -t ./htdocs -c ./htdocs/php.ini"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "postcss": "^8.4.33",
+    "postcss-preset-env": "^9.3.0",
+    "rollup": "^4.9.3",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-postcss": "^4.0.2"
+  }
+}

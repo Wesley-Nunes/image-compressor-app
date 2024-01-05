@@ -1,4 +1,4 @@
-const Manager = (() => {
+window.Manager = (() => {
   const imageCard = document.querySelector(".content");
   const textContainer = imageCard.querySelector(".text-content");
   const btn = imageCard.querySelector(".upload-image-btn");
@@ -8,6 +8,12 @@ const Manager = (() => {
   let internalState;
   let intervalIds = [];
 
+  const searchForCookie = (cookieName) => {
+    const cookies = document.cookie;
+    const regex = new RegExp(cookieName + "=([^;]*)", "i");
+    const cookie = cookies.match(regex) || [];
+    return cookie[1];
+  };
   const resetCookiesValue = () => {
     document.cookie = "downloadImage=false";
     document.cookie = "errorMessage=";
@@ -33,18 +39,6 @@ const Manager = (() => {
       .replace(/%20/g, " ");
     errorTextField.textContent = errorMessage;
   };
-  const getState = () => {
-    return internalState;
-  };
-  const setState = (newState) => {
-    internalState = newState;
-  };
-  const searchForCookie = (cookieName) => {
-    const cookies = document.cookie;
-    const regex = new RegExp(cookieName + "=([^;]*)", "i");
-    const cookie = cookies.match(regex) || [];
-    return cookie[1];
-  };
   const hasError = () => {
     return searchForCookie("errorMessage");
   };
@@ -52,6 +46,14 @@ const Manager = (() => {
     const downloadImage = searchForCookie("downloadImage");
     return downloadImage === "true";
   };
+
+  const getState = () => {
+    return internalState;
+  };
+  const setState = (newState) => {
+    internalState = newState;
+  };
+
   const setIdleState = () => {
     setState("idle");
     resetCookiesValue();

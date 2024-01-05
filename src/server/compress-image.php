@@ -6,16 +6,19 @@ function compressImage($originalImagePath, $compressedImagePath)
 
     if ($mimeType == 'image/jpeg') {
         $img = imagecreatefromjpeg($originalImagePath);
-        imagejpeg($img, $compressedImagePath, 80);
+        $quality = 80;
+        imagejpeg($img, $compressedImagePath, $quality);
     } elseif ($mimeType == 'image/png') {
         $img = imagecreatefrompng($originalImagePath);
+        $quality = 8;
         imageAlphaBlending($img, true);
         imageSaveAlpha($img, true);
-        imagepng($img, $compressedImagePath, 8);
+        imagepng($img, $compressedImagePath, $quality);
     } elseif ($mimeType == 'image/webp') {
         $img = imagecreatefromwebp($originalImagePath);
+        $quality = 80;
         imageSaveAlpha($img, true);
-        imagewebp($img, $compressedImagePath, 80);
+        imagewebp($img, $compressedImagePath, $quality);
     }
 
     imagedestroy($img);

@@ -1,6 +1,4 @@
 <?php
-session_start(); ?>
-<?php
 include 'compress-image.php';
 include 'download-image.php';
 include 'delete-image.php';
