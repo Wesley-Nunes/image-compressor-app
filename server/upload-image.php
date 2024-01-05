@@ -1,6 +1,4 @@
 <?php
-session_start(); ?>
-<?php
 include 'compress-image.php';
 include 'download-image.php';
 include 'delete-image.php';
@@ -40,7 +38,7 @@ try {
         $errorMessage = "Unsupported format: JPG, PNG, or WebP accepted";
         throw new Exception($errorMessage);
     }    
-    compressImage($uploadImagePath, $compressImagePath);
+    compressImage($uploadImagePath, $compressImagePath, 0);
     downloadImage($compressImagePath);
 } catch (Exception $e) {
     setcookie('errorMessage', $e->getMessage(), time() + 3600, '/');

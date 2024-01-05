@@ -1,0 +1,19 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  justify-content: center;
+  align-content: space-evenly;
+}
+.footer-container {
+  background-color: var(--surface-low);
+
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+
+  border-radius: 4px;
+
+  box-shadow: rgba(45, 106, 69, 0.2) 1px 8px 3px 3px;
+}
