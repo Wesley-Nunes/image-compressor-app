@@ -13,6 +13,7 @@ Image Compressor is a tool designed to efficiently compress images.
 - [Requirements](#requirements)
 - [How to use](#how-to-use)
 - [Project structure](#project-structure)
+- [Design](#design)
 - [Lighthouse Report](#lighthouse-report)
 - [Preview](#preview)
 - [Attributions](#attributions)
@@ -58,6 +59,11 @@ npm i                   # install the packages
 npm run build           # build the project on folder htdocs
 npm run server          # starts the PHP built-in in server
 ```
+
+## <a name="design"></a>Design
+
+I create the design using the Material 3 design system.  
+The design is available here: [Image Compressor](https://www.figma.com/file/LVjL0KETlSy8WoqwpKzPIt/Image-Compressor?type=design&node-id=0%3A1&mode=design&t=w8Y4N3hv68IHBA1H-1).
 
 ## <a name="#lighthouse-report"></a>Lighthouse Report
 
