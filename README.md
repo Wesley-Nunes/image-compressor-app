@@ -77,7 +77,7 @@ The tests are available here: [image-compressor-tests](https://github.com/Wesley
 
 ## <a name="preview"></a>Preview
 
-The project is available on [Image Compressor](https://image-compressor.rf.gd/?i=1)
+The project is available on [Image Compressor](https://image-compressor.page.gd/?i=1)
 
 ## <a name="attributions"></a>Attributions
 
